@@ -1,0 +1,10 @@
+id,x_m,y_m,z_m,band_ghz,ap_label,channel,measured_rssi_dbm,client_device,note
+P01,14.0,10.0,1.2,5,WH-AP-01,36,-48,Zebra TC52,Đầu lối đi kệ hàng A
+P02,25.0,10.0,1.2,5,WH-AP-01,36,-56,Zebra TC52,Giữa lối đi kệ hàng A (giữa 2 hàng kệ 6m)
+P03,35.0,10.0,1.2,5,WH-AP-01,36,-63,Zebra TC52,Cuối lối đi kệ hàng A
+P04,25.0,15.5,1.2,5,WH-AP-01,36,-69,Zebra TC52,Lối đi ngang xuyên qua hàng kệ B
+P05,14.0,21.0,1.2,5,WH-AP-02,132,-47,Zebra TC52,Đầu lối đi kệ hàng C
+P06,28.0,21.0,1.2,5,WH-AP-02,132,-58,Zebra TC52,Giữa lối đi kệ hàng C (khu vực hàng dày)
+P07,38.0,21.0,1.2,5,WH-AP-02,132,-64,Zebra TC52,Cuối lối đi kệ hàng C
+P08,10.0,25.0,1.2,5,WH-AP-03,149,-52,Zebra TC52,Khu vực xếp dỡ Loading Dock
+P09,48.0,28.0,1.2,5,WH-AP-04,100,-54,Zebra TC52,Khu vực văn phòng kho & IT

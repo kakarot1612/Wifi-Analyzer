@@ -1,0 +1,445 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "id": "office-building-bpvn",
+    "name": "Tòa Nhà Văn Phòng Điều Hành BPVN (Floor 2)",
+    "units": "m",
+    "floorHeightM": 3.5,
+    "scale": {
+      "calibrated": true,
+      "pixelsPerMeter": 22.88,
+      "referenceLengthM": 40.0
+    },
+    "receiverProfile": {
+      "id": "laptop-office",
+      "name": "Laptop & Mobile Văn Phòng",
+      "heightM": 1.0,
+      "bandsGHz": [
+        2.4,
+        5.0
+      ],
+      "targetRssiDbm": -65.0,
+      "targetSnrDb": 25.0,
+      "rxGainDbi": 0.0
+    }
+  },
+  "background": {
+    "type": "preset",
+    "fileId": "warehouse-blueprint",
+    "fileName": "BPVN-Office-Floor2.jpg",
+    "page": 1,
+    "opacity": 0.85,
+    "imageDataUrl": "/pic2.jpg",
+    "widthPx": 915,
+    "heightPx": 657
+  },
+  "materials": [
+    {
+      "id": "drywall",
+      "name": "Drywall / Thạch cao mỏng (10 cm)",
+      "attenuationDb": {
+        "2.4": 3.0,
+        "5": 4.0,
+        "6": 4.5
+      },
+      "defaultThicknessM": 0.1,
+      "color": "#94a3b8",
+      "assumption": true,
+      "description": "Vách ngăn văn phòng thạch cao 2 lớp tiêu chuẩn."
+    },
+    {
+      "id": "brick_wall",
+      "name": "Tường gạch đặc (20 cm)",
+      "attenuationDb": {
+        "2.4": 8.0,
+        "5": 12.0,
+        "6": 14.0
+      },
+      "defaultThicknessM": 0.2,
+      "color": "#f97316",
+      "assumption": true,
+      "description": "Tường bao công trình gạch nung trát vữa."
+    },
+    {
+      "id": "concrete_heavy",
+      "name": "Bê tông cốt thép (25 cm)",
+      "attenuationDb": {
+        "2.4": 15.0,
+        "5": 22.0,
+        "6": 26.0
+      },
+      "defaultThicknessM": 0.25,
+      "color": "#64748b",
+      "assumption": true,
+      "description": "Tường chịu lực hoặc lõi thang máy bê tông dày."
+    },
+    {
+      "id": "glass_window",
+      "name": "Vách kính cường lực (1.2 cm)",
+      "attenuationDb": {
+        "2.4": 2.0,
+        "5": 3.0,
+        "6": 3.5
+      },
+      "defaultThicknessM": 0.012,
+      "color": "#38bdf8",
+      "assumption": true,
+      "description": "Cửa hoặc vách kính phòng họp/văn phòng."
+    },
+    {
+      "id": "warehouse_rack_dense",
+      "name": "Kệ kho kim loại & hàng hóa dày (Rack 5-7m)",
+      "attenuationDb": {
+        "2.4": 14.0,
+        "5": 18.0,
+        "6": 21.0
+      },
+      "defaultThicknessM": 1.2,
+      "color": "#eab308",
+      "assumption": true,
+      "description": "Kệ selective pallet racking chứa hàng hóa mật độ cao (tham khảo Pic 1 & 3)."
+    },
+    {
+      "id": "metal_door_elevator",
+      "name": "Cửa cuốn kim loại / Thang máy",
+      "attenuationDb": {
+        "2.4": 18.0,
+        "5": 25.0,
+        "6": 28.0
+      },
+      "defaultThicknessM": 0.05,
+      "color": "#ef4444",
+      "assumption": true,
+      "description": "Cửa cuốn loading bay hoặc giếng thang máy kim loại."
+    }
+  ],
+  "obstacles": [
+    {
+      "id": "off-wall-n",
+      "type": "wall",
+      "name": "Tường bao kính/bê tông Bắc",
+      "pointsM": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          39.0,
+          1.0
+        ]
+      ],
+      "heightM": 3.5,
+      "thicknessM": 0.2,
+      "materialId": "brick_wall",
+      "attenuationDbPerM": null
+    },
+    {
+      "id": "off-wall-s",
+      "type": "wall",
+      "name": "Tường bao Nam",
+      "pointsM": [
+        [
+          1.0,
+          24.0
+        ],
+        [
+          39.0,
+          24.0
+        ]
+      ],
+      "heightM": 3.5,
+      "thicknessM": 0.2,
+      "materialId": "brick_wall",
+      "attenuationDbPerM": null
+    },
+    {
+      "id": "off-wall-w",
+      "type": "wall",
+      "name": "Tường bao Tây",
+      "pointsM": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          24.0
+        ]
+      ],
+      "heightM": 3.5,
+      "thicknessM": 0.2,
+      "materialId": "brick_wall",
+      "attenuationDbPerM": null
+    },
+    {
+      "id": "off-wall-e",
+      "type": "wall",
+      "name": "Tường bao Đông",
+      "pointsM": [
+        [
+          39.0,
+          1.0
+        ],
+        [
+          39.0,
+          24.0
+        ]
+      ],
+      "heightM": 3.5,
+      "thicknessM": 0.2,
+      "materialId": "brick_wall",
+      "attenuationDbPerM": null
+    },
+    {
+      "id": "off-dry-1",
+      "type": "wall",
+      "name": "Vách thạch cao Phòng Họp Lớn",
+      "pointsM": [
+        [
+          1.0,
+          10.0
+        ],
+        [
+          15.0,
+          10.0
+        ]
+      ],
+      "heightM": 3.5,
+      "thicknessM": 0.1,
+      "materialId": "drywall",
+      "attenuationDbPerM": null
+    },
+    {
+      "id": "off-dry-2",
+      "type": "wall",
+      "name": "Vách ngăn Giám Đốc",
+      "pointsM": [
+        [
+          15.0,
+          1.0
+        ],
+        [
+          15.0,
+          10.0
+        ]
+      ],
+      "heightM": 3.5,
+      "thicknessM": 0.1,
+      "materialId": "drywall",
+      "attenuationDbPerM": null
+    },
+    {
+      "id": "off-glass-1",
+      "type": "wall",
+      "name": "Vách kính phòng họp VIP",
+      "pointsM": [
+        [
+          25.0,
+          1.0
+        ],
+        [
+          25.0,
+          12.0
+        ]
+      ],
+      "heightM": 3.5,
+      "thicknessM": 0.012,
+      "materialId": "glass_window",
+      "attenuationDbPerM": null
+    },
+    {
+      "id": "off-glass-2",
+      "type": "wall",
+      "name": "Vách kính hành lang VIP",
+      "pointsM": [
+        [
+          25.0,
+          12.0
+        ],
+        [
+          39.0,
+          12.0
+        ]
+      ],
+      "heightM": 3.5,
+      "thicknessM": 0.012,
+      "materialId": "glass_window",
+      "attenuationDbPerM": null
+    }
+  ],
+  "aps": [
+    {
+      "id": "off-ap-01",
+      "label": "OFF-AP-01",
+      "vendor": "Cisco",
+      "model": "C9120AXI",
+      "positionM": {
+        "x": 8.0,
+        "y": 5.5,
+        "z": 3.0
+      },
+      "mountingType": "ceiling",
+      "orientationDeg": 0.0,
+      "elevationDeg": 0.0,
+      "antennaType": "omni",
+      "radios": {
+        "2.4": {
+          "enabled": true,
+          "channelMHz": 5180,
+          "channelNumber": 1,
+          "txPowerDbm": 12.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 4.0,
+          "reason": null
+        },
+        "5": {
+          "enabled": true,
+          "channelMHz": 5180,
+          "channelNumber": 36,
+          "txPowerDbm": 14.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 5.0,
+          "reason": null
+        },
+        "6": {
+          "enabled": false,
+          "channelMHz": 5180,
+          "channelNumber": 37,
+          "txPowerDbm": 12.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 5.0,
+          "reason": null
+        }
+      },
+      "wlcBinding": {
+        "controllerId": null,
+        "apMac": null,
+        "ipAddress": null,
+        "syncedAt": null
+      }
+    },
+    {
+      "id": "off-ap-02",
+      "label": "OFF-AP-02",
+      "vendor": "Cisco",
+      "model": "C9120AXI",
+      "positionM": {
+        "x": 20.0,
+        "y": 17.0,
+        "z": 3.0
+      },
+      "mountingType": "ceiling",
+      "orientationDeg": 0.0,
+      "elevationDeg": 0.0,
+      "antennaType": "omni",
+      "radios": {
+        "2.4": {
+          "enabled": true,
+          "channelMHz": 5180,
+          "channelNumber": 6,
+          "txPowerDbm": 12.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 4.0,
+          "reason": null
+        },
+        "5": {
+          "enabled": true,
+          "channelMHz": 5180,
+          "channelNumber": 52,
+          "txPowerDbm": 14.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 5.0,
+          "reason": null
+        },
+        "6": {
+          "enabled": false,
+          "channelMHz": 5180,
+          "channelNumber": 37,
+          "txPowerDbm": 12.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 5.0,
+          "reason": null
+        }
+      },
+      "wlcBinding": {
+        "controllerId": null,
+        "apMac": null,
+        "ipAddress": null,
+        "syncedAt": null
+      }
+    },
+    {
+      "id": "off-ap-03",
+      "label": "OFF-AP-03",
+      "vendor": "Cisco",
+      "model": "C9120AXI",
+      "positionM": {
+        "x": 32.0,
+        "y": 6.0,
+        "z": 3.0
+      },
+      "mountingType": "ceiling",
+      "orientationDeg": 0.0,
+      "elevationDeg": 0.0,
+      "antennaType": "omni",
+      "radios": {
+        "2.4": {
+          "enabled": true,
+          "channelMHz": 5180,
+          "channelNumber": 11,
+          "txPowerDbm": 12.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 4.0,
+          "reason": null
+        },
+        "5": {
+          "enabled": true,
+          "channelMHz": 5180,
+          "channelNumber": 100,
+          "txPowerDbm": 14.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 5.0,
+          "reason": null
+        },
+        "6": {
+          "enabled": false,
+          "channelMHz": 5180,
+          "channelNumber": 37,
+          "txPowerDbm": 12.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 5.0,
+          "reason": null
+        }
+      },
+      "wlcBinding": {
+        "controllerId": null,
+        "apMac": null,
+        "ipAddress": null,
+        "syncedAt": null
+      }
+    }
+  ],
+  "simulation": {
+    "model": "log-distance-wall-loss-v1",
+    "gridSizeM": 0.5,
+    "pathLossExponent": 2.6,
+    "referenceDistanceM": 1.0,
+    "noiseFloorDbm": {
+      "2.4": -92.0,
+      "5": -92.0,
+      "6": -92.0
+    },
+    "showLayer": "5",
+    "revision": 1,
+    "calibrationStatus": "uncalibrated"
+  }
+}

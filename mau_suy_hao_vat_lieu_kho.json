@@ -1,0 +1,68 @@
+{
+  "description": "File mẫu hệ số suy hao vật liệu và kệ kho thực tế để hiệu chỉnh RF Planner",
+  "version": "1.0",
+  "materials": [
+    {
+      "id": "warehouse_rack_dense",
+      "name": "Kệ kho Selective Pallet Racking (Hàng hóa dày đặc)",
+      "heightM": 6.0,
+      "thicknessM": 2.5,
+      "attenuationDbPerM": 18.0,
+      "attenuationDb": {
+        "2.4GHz": 14.0,
+        "5GHz": 18.0,
+        "6GHz": 21.0
+      },
+      "note": "Kệ chứa thùng carton, linh kiện điện tử, pallet gỗ. Suy hao rất lớn khi sóng đi ngang xuyên kệ"
+    },
+    {
+      "id": "warehouse_rack_light",
+      "name": "Kệ kho hàng nhẹ / Thưa (Light Shelving)",
+      "heightM": 4.5,
+      "thicknessM": 1.5,
+      "attenuationDbPerM": 8.0,
+      "attenuationDb": {
+        "2.4GHz": 6.0,
+        "5GHz": 8.5,
+        "6GHz": 10.0
+      },
+      "note": "Kệ chứa quần áo, đồ nhựa nhẹ hoặc tỷ lệ lấp đầy hàng dưới 50%"
+    },
+    {
+      "id": "metal_rolling_door",
+      "name": "Cửa cuốn kim loại xuất nhập hàng (Loading Bay)",
+      "heightM": 5.0,
+      "thicknessM": 0.05,
+      "attenuationDb": {
+        "2.4GHz": 18.0,
+        "5GHz": 25.0,
+        "6GHz": 28.0
+      },
+      "note": "Lớp tôn kim loại phản xạ và chắn sóng gần như hoàn toàn"
+    },
+    {
+      "id": "brick_wall_20cm",
+      "name": "Tường gạch đặc bao kho (20cm)",
+      "heightM": 8.0,
+      "thicknessM": 0.20,
+      "attenuationDb": {
+        "2.4GHz": 8.0,
+        "5GHz": 12.0,
+        "6GHz": 14.0
+      },
+      "note": "Tường gạch nung 2 bên trát vữa xi măng"
+    },
+    {
+      "id": "drywall_office",
+      "name": "Vách thạch cao văn phòng (10cm)",
+      "heightM": 3.5,
+      "thicknessM": 0.10,
+      "attenuationDb": {
+        "2.4GHz": 3.0,
+        "5GHz": 4.0,
+        "6GHz": 4.5
+      },
+      "note": "Khung xương thép mạ kẽm bọc 2 tấm thạch cao tiêu chuẩn"
+    }
+  ]
+}

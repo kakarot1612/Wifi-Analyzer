@@ -1,0 +1,108 @@
+{
+  "$schema": "./wifi_rf_planner_spec.md",
+  "version": "1.0",
+  "description": "File mẫu thông số phần cứng Access Point và Anten thực tế để nạp vào hệ thống Wi-Fi RF Planner",
+  "vendor": "Cisco Systems",
+  "accessPoints": [
+    {
+      "model": "C9115AXI-B",
+      "marketingName": "Cisco Catalyst 9115AXI (Wi-Fi 6, Anten ngầm Omni)",
+      "mountRecommendation": "Lắp trần (Ceiling Mount)",
+      "description": "Thích hợp cho khu vực văn phòng kho, khu đóng gói QA, trần cao dưới 4.5m",
+      "supports6GHz": false,
+      "radios": {
+        "2.4GHz": {
+          "supported": true,
+          "mimo": "2x2:2",
+          "maxTxPowerDbm": 23.0,
+          "recommendedTxPowerDbm": 14.0,
+          "internalAntennaGainDBi": 3.0,
+          "channelsAvailable": [1, 6, 11]
+        },
+        "5GHz": {
+          "supported": true,
+          "mimo": "4x4:4",
+          "maxTxPowerDbm": 23.0,
+          "recommendedTxPowerDbm": 14.0,
+          "internalAntennaGainDBi": 4.0,
+          "channelsAvailable": [36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 149, 153, 157, 161]
+        },
+        "6GHz": {
+          "supported": false,
+          "reason": "Dòng C9115AX chỉ hỗ trợ chuẩn Wi-Fi 6 (802.11ax 2.4 & 5 GHz), không hỗ trợ Wi-Fi 6E 6 GHz"
+        }
+      },
+      "antennaPattern": {
+        "type": "omni",
+        "azimuthBeamwidthDeg": 360,
+        "elevationBeamwidthDeg": 70
+      }
+    },
+    {
+      "model": "C9115AXE-B",
+      "marketingName": "Cisco Catalyst 9115AXE + AIR-ANT2566P4W-R (Anten ngoài định hướng lối đi)",
+      "mountRecommendation": "Lắp tường ở đầu lối đi hoặc xà gồ thép trên cao (Wall / Beam Mount)",
+      "description": "Chuyên dụng cho nhà kho có kệ pallet kim loại cao 5-10m. Búp sóng gom hẹp 60 độ bắn dọc lối đi",
+      "supports6GHz": false,
+      "externalAntenna": {
+        "partNumber": "AIR-ANT2566P4W-R",
+        "antennaType": "Dual-Band 4-Port Directional Patch",
+        "connectorType": "4 x RP-TNC male",
+        "gain24GHzDbi": 6.0,
+        "gain5GHzDbi": 6.0,
+        "azimuthBeamwidthDeg": 60.0,
+        "elevationBeamwidthDeg": 60.0,
+        "frontToBackRatioDb": 20.0,
+        "cableLossDb": 0.5
+      },
+      "radios": {
+        "2.4GHz": {
+          "supported": true,
+          "mimo": "2x2:2",
+          "maxTxPowerDbm": 23.0,
+          "recommendedTxPowerDbm": 15.0,
+          "effectiveGainDbi": 6.0,
+          "channelsAvailable": [1, 6, 11]
+        },
+        "5GHz": {
+          "supported": true,
+          "mimo": "4x4:4",
+          "maxTxPowerDbm": 23.0,
+          "recommendedTxPowerDbm": 15.0,
+          "effectiveGainDbi": 6.0,
+          "channelsAvailable": [36, 52, 100, 132, 149]
+        },
+        "6GHz": {
+          "supported": false,
+          "reason": "Dòng C9115AXE không hỗ trợ 6 GHz"
+        }
+      },
+      "antennaPattern": {
+        "type": "directional_aisle",
+        "azimuthBeamwidthDeg": 60,
+        "elevationBeamwidthDeg": 60
+      }
+    },
+    {
+      "model": "C9115AXE-B-OMNI",
+      "marketingName": "Cisco Catalyst 9115AXE + AIR-ANT2524Db-R (Dipole Omni)",
+      "mountRecommendation": "Lắp trần hoặc cột đứng",
+      "description": "Anten que đẳng hướng 360 độ cho khu vực không gian thoáng",
+      "supports6GHz": false,
+      "externalAntenna": {
+        "partNumber": "AIR-ANT2524Db-R",
+        "antennaType": "Dual-band Dipole Omni",
+        "gain24GHzDbi": 2.0,
+        "gain5GHzDbi": 4.0,
+        "azimuthBeamwidthDeg": 360.0,
+        "elevationBeamwidthDeg": 65.0,
+        "cableLossDb": 0.0
+      },
+      "radios": {
+        "2.4GHz": { "maxTxPowerDbm": 23.0, "recommendedTxPowerDbm": 14.0, "effectiveGainDbi": 2.0 },
+        "5GHz": { "maxTxPowerDbm": 23.0, "recommendedTxPowerDbm": 14.0, "effectiveGainDbi": 4.0 }
+      },
+      "antennaPattern": { "type": "omni" }
+    }
+  ]
+}

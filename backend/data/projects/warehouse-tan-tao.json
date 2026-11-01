@@ -1,0 +1,641 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "id": "warehouse-tan-tao",
+    "name": "Kho Trung Tâm Logistics Tân Tạo (Demo Floor 60x36m)",
+    "units": "m",
+    "floorHeightM": 8.0,
+    "scale": {
+      "calibrated": true,
+      "pixelsPerMeter": 63.73,
+      "referenceLengthM": 60.0
+    },
+    "receiverProfile": {
+      "id": "barcode-pda",
+      "name": "Zebra TC52/TC57 Barcode Scanner",
+      "heightM": 1.2,
+      "bandsGHz": [
+        2.4,
+        5.0
+      ],
+      "targetRssiDbm": -65.0,
+      "targetSnrDb": 25.0,
+      "rxGainDbi": 0.0
+    }
+  },
+  "background": {
+    "type": "preset",
+    "fileId": "warehouse-layout",
+    "fileName": "pic1.jpg (Mặt bằng kho Ekahau)",
+    "page": 1,
+    "opacity": 0.85,
+    "imageDataUrl": "/pic1.jpg",
+    "widthPx": 3824,
+    "heightPx": 2360
+  },
+  "materials": [
+    {
+      "id": "drywall",
+      "name": "Drywall / Thạch cao mỏng (10 cm)",
+      "attenuationDb": {
+        "2.4": 3.0,
+        "5": 4.0,
+        "6": 4.5
+      },
+      "defaultThicknessM": 0.1,
+      "color": "#94a3b8",
+      "assumption": true,
+      "description": "Vách ngăn văn phòng thạch cao 2 lớp tiêu chuẩn."
+    },
+    {
+      "id": "brick_wall",
+      "name": "Tường gạch đặc (20 cm)",
+      "attenuationDb": {
+        "2.4": 8.0,
+        "5": 12.0,
+        "6": 14.0
+      },
+      "defaultThicknessM": 0.2,
+      "color": "#f97316",
+      "assumption": true,
+      "description": "Tường bao công trình gạch nung trát vữa."
+    },
+    {
+      "id": "concrete_heavy",
+      "name": "Bê tông cốt thép (25 cm)",
+      "attenuationDb": {
+        "2.4": 15.0,
+        "5": 22.0,
+        "6": 26.0
+      },
+      "defaultThicknessM": 0.25,
+      "color": "#64748b",
+      "assumption": true,
+      "description": "Tường chịu lực hoặc lõi thang máy bê tông dày."
+    },
+    {
+      "id": "glass_window",
+      "name": "Vách kính cường lực (1.2 cm)",
+      "attenuationDb": {
+        "2.4": 2.0,
+        "5": 3.0,
+        "6": 3.5
+      },
+      "defaultThicknessM": 0.012,
+      "color": "#38bdf8",
+      "assumption": true,
+      "description": "Cửa hoặc vách kính phòng họp/văn phòng."
+    },
+    {
+      "id": "warehouse_rack_dense",
+      "name": "Kệ kho kim loại & hàng hóa dày (Rack 5-7m)",
+      "attenuationDb": {
+        "2.4": 14.0,
+        "5": 18.0,
+        "6": 21.0
+      },
+      "defaultThicknessM": 1.2,
+      "color": "#eab308",
+      "assumption": true,
+      "description": "Kệ selective pallet racking chứa hàng hóa mật độ cao (tham khảo Pic 1 & 3)."
+    },
+    {
+      "id": "metal_door_elevator",
+      "name": "Cửa cuốn kim loại / Thang máy",
+      "attenuationDb": {
+        "2.4": 18.0,
+        "5": 25.0,
+        "6": 28.0
+      },
+      "defaultThicknessM": 0.05,
+      "color": "#ef4444",
+      "assumption": true,
+      "description": "Cửa cuốn loading bay hoặc giếng thang máy kim loại."
+    }
+  ],
+  "obstacles": [
+    {
+      "id": "outer-wall-n",
+      "type": "wall",
+      "name": "Tường ngoài phía Bắc",
+      "pointsM": [
+        [
+          2.0,
+          2.0
+        ],
+        [
+          58.0,
+          2.0
+        ]
+      ],
+      "heightM": 8.0,
+      "thicknessM": 0.2,
+      "materialId": "brick_wall",
+      "attenuationDbPerM": null
+    },
+    {
+      "id": "outer-wall-s",
+      "type": "wall",
+      "name": "Tường ngoài phía Nam",
+      "pointsM": [
+        [
+          2.0,
+          34.0
+        ],
+        [
+          58.0,
+          34.0
+        ]
+      ],
+      "heightM": 8.0,
+      "thicknessM": 0.2,
+      "materialId": "brick_wall",
+      "attenuationDbPerM": null
+    },
+    {
+      "id": "outer-wall-w",
+      "type": "wall",
+      "name": "Tường ngoài phía Tây",
+      "pointsM": [
+        [
+          2.0,
+          2.0
+        ],
+        [
+          2.0,
+          34.0
+        ]
+      ],
+      "heightM": 8.0,
+      "thicknessM": 0.2,
+      "materialId": "brick_wall",
+      "attenuationDbPerM": null
+    },
+    {
+      "id": "outer-wall-e",
+      "type": "wall",
+      "name": "Tường ngoài phía Đông",
+      "pointsM": [
+        [
+          58.0,
+          2.0
+        ],
+        [
+          58.0,
+          34.0
+        ]
+      ],
+      "heightM": 8.0,
+      "thicknessM": 0.2,
+      "materialId": "brick_wall",
+      "attenuationDbPerM": null
+    },
+    {
+      "id": "office-wall-1",
+      "type": "wall",
+      "name": "Vách văn phòng điều hành",
+      "pointsM": [
+        [
+          42.0,
+          22.0
+        ],
+        [
+          58.0,
+          22.0
+        ]
+      ],
+      "heightM": 3.5,
+      "thicknessM": 0.1,
+      "materialId": "drywall",
+      "attenuationDbPerM": null
+    },
+    {
+      "id": "office-wall-2",
+      "type": "wall",
+      "name": "Vách phòng họp & IT",
+      "pointsM": [
+        [
+          42.0,
+          22.0
+        ],
+        [
+          42.0,
+          34.0
+        ]
+      ],
+      "heightM": 3.5,
+      "thicknessM": 0.1,
+      "materialId": "drywall",
+      "attenuationDbPerM": null
+    },
+    {
+      "id": "rack-row-1a",
+      "type": "rack",
+      "name": "Kệ hàng A-01 (Cao 6m)",
+      "pointsM": [
+        [
+          18.0,
+          6.0
+        ],
+        [
+          38.0,
+          6.0
+        ],
+        [
+          38.0,
+          8.5
+        ],
+        [
+          18.0,
+          8.5
+        ]
+      ],
+      "heightM": 6.0,
+      "thicknessM": 2.5,
+      "materialId": "warehouse_rack_dense",
+      "attenuationDbPerM": 18.0
+    },
+    {
+      "id": "rack-row-1b",
+      "type": "rack",
+      "name": "Kệ hàng A-02 (Cao 6m)",
+      "pointsM": [
+        [
+          41.0,
+          6.0
+        ],
+        [
+          54.0,
+          6.0
+        ],
+        [
+          54.0,
+          8.5
+        ],
+        [
+          41.0,
+          8.5
+        ]
+      ],
+      "heightM": 6.0,
+      "thicknessM": 2.5,
+      "materialId": "warehouse_rack_dense",
+      "attenuationDbPerM": 18.0
+    },
+    {
+      "id": "rack-row-2a",
+      "type": "rack",
+      "name": "Kệ hàng B-01 (Cao 6m)",
+      "pointsM": [
+        [
+          18.0,
+          11.5
+        ],
+        [
+          38.0,
+          11.5
+        ],
+        [
+          38.0,
+          14.0
+        ],
+        [
+          18.0,
+          14.0
+        ]
+      ],
+      "heightM": 6.0,
+      "thicknessM": 2.5,
+      "materialId": "warehouse_rack_dense",
+      "attenuationDbPerM": 18.0
+    },
+    {
+      "id": "rack-row-2b",
+      "type": "rack",
+      "name": "Kệ hàng B-02 (Cao 6m)",
+      "pointsM": [
+        [
+          41.0,
+          11.5
+        ],
+        [
+          54.0,
+          11.5
+        ],
+        [
+          54.0,
+          14.0
+        ],
+        [
+          41.0,
+          14.0
+        ]
+      ],
+      "heightM": 6.0,
+      "thicknessM": 2.5,
+      "materialId": "warehouse_rack_dense",
+      "attenuationDbPerM": 18.0
+    },
+    {
+      "id": "rack-row-3a",
+      "type": "rack",
+      "name": "Kệ hàng C-01 (Cao 6m)",
+      "pointsM": [
+        [
+          18.0,
+          17.0
+        ],
+        [
+          38.0,
+          17.0
+        ],
+        [
+          38.0,
+          19.5
+        ],
+        [
+          18.0,
+          19.5
+        ]
+      ],
+      "heightM": 6.0,
+      "thicknessM": 2.5,
+      "materialId": "warehouse_rack_dense",
+      "attenuationDbPerM": 18.0
+    },
+    {
+      "id": "rack-row-4a",
+      "type": "rack",
+      "name": "Kệ hàng D-01 (Cao 6m)",
+      "pointsM": [
+        [
+          18.0,
+          22.5
+        ],
+        [
+          38.0,
+          22.5
+        ],
+        [
+          38.0,
+          25.0
+        ],
+        [
+          18.0,
+          25.0
+        ]
+      ],
+      "heightM": 6.0,
+      "thicknessM": 2.5,
+      "materialId": "warehouse_rack_dense",
+      "attenuationDbPerM": 18.0
+    },
+    {
+      "id": "loading-door-w",
+      "type": "wall",
+      "name": "Cửa cuốn xuất nhập hàng",
+      "pointsM": [
+        [
+          2.0,
+          16.0
+        ],
+        [
+          2.0,
+          26.0
+        ]
+      ],
+      "heightM": 5.0,
+      "thicknessM": 0.08,
+      "materialId": "metal_door_elevator",
+      "attenuationDbPerM": null
+    }
+  ],
+  "aps": [
+    {
+      "id": "ap-01",
+      "label": "WH-AP-01",
+      "vendor": "Cisco",
+      "model": "C9130AXE-DIR",
+      "positionM": {
+        "x": 12.0,
+        "y": 10.0,
+        "z": 5.5
+      },
+      "mountingType": "wall",
+      "orientationDeg": 0.0,
+      "elevationDeg": 0.0,
+      "antennaType": "directional_aisle",
+      "radios": {
+        "2.4": {
+          "enabled": true,
+          "channelMHz": 2412,
+          "channelNumber": 1,
+          "txPowerDbm": 15.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 6.0,
+          "reason": null
+        },
+        "5": {
+          "enabled": true,
+          "channelMHz": 5180,
+          "channelNumber": 36,
+          "txPowerDbm": 15.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 8.0,
+          "reason": null
+        },
+        "6": {
+          "enabled": false,
+          "channelMHz": 5180,
+          "channelNumber": 36,
+          "txPowerDbm": 14.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 4.0,
+          "reason": "Hardware model 9130AXE does not support 6 GHz"
+        }
+      },
+      "wlcBinding": {
+        "controllerId": "c9800-warehouse",
+        "apMac": "f4:bd:9e:11:22:01",
+        "ipAddress": "10.10.20.101",
+        "syncedAt": null
+      }
+    },
+    {
+      "id": "ap-02",
+      "label": "WH-AP-02",
+      "vendor": "Cisco",
+      "model": "C9130AXE-DIR",
+      "positionM": {
+        "x": 12.0,
+        "y": 21.0,
+        "z": 5.5
+      },
+      "mountingType": "wall",
+      "orientationDeg": 0.0,
+      "elevationDeg": 0.0,
+      "antennaType": "directional_aisle",
+      "radios": {
+        "2.4": {
+          "enabled": true,
+          "channelMHz": 2437,
+          "channelNumber": 6,
+          "txPowerDbm": 14.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 6.0,
+          "reason": null
+        },
+        "5": {
+          "enabled": true,
+          "channelMHz": 5660,
+          "channelNumber": 132,
+          "txPowerDbm": 14.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 8.0,
+          "reason": null
+        },
+        "6": {
+          "enabled": false,
+          "channelMHz": 5180,
+          "channelNumber": 36,
+          "txPowerDbm": 14.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 4.0,
+          "reason": "Hardware model 9130AXE does not support 6 GHz"
+        }
+      },
+      "wlcBinding": {
+        "controllerId": "c9800-warehouse",
+        "apMac": "f4:bd:9e:11:22:02",
+        "ipAddress": "10.10.20.102",
+        "syncedAt": null
+      }
+    },
+    {
+      "id": "ap-03",
+      "label": "WH-AP-03",
+      "vendor": "Cisco",
+      "model": "C9120AXI",
+      "positionM": {
+        "x": 8.0,
+        "y": 21.0,
+        "z": 6.0
+      },
+      "mountingType": "ceiling",
+      "orientationDeg": 90.0,
+      "elevationDeg": 0.0,
+      "antennaType": "omni",
+      "radios": {
+        "2.4": {
+          "enabled": true,
+          "channelMHz": 2462,
+          "channelNumber": 11,
+          "txPowerDbm": 14.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 4.0,
+          "reason": null
+        },
+        "5": {
+          "enabled": true,
+          "channelMHz": 5745,
+          "channelNumber": 149,
+          "txPowerDbm": 14.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 5.0,
+          "reason": null
+        },
+        "6": {
+          "enabled": false,
+          "channelMHz": 5180,
+          "channelNumber": 36,
+          "txPowerDbm": 14.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 4.0,
+          "reason": "Hardware model 9120AXI does not support 6 GHz"
+        }
+      },
+      "wlcBinding": {
+        "controllerId": "c9800-warehouse",
+        "apMac": "f4:bd:9e:11:22:03",
+        "ipAddress": "10.10.20.103",
+        "syncedAt": null
+      }
+    },
+    {
+      "id": "ap-04",
+      "label": "WH-AP-04",
+      "vendor": "Cisco",
+      "model": "C9164I",
+      "positionM": {
+        "x": 50.0,
+        "y": 28.0,
+        "z": 3.5
+      },
+      "mountingType": "ceiling",
+      "orientationDeg": 0.0,
+      "elevationDeg": 0.0,
+      "antennaType": "omni",
+      "radios": {
+        "2.4": {
+          "enabled": true,
+          "channelMHz": 2412,
+          "channelNumber": 1,
+          "txPowerDbm": 12.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 4.0,
+          "reason": null
+        },
+        "5": {
+          "enabled": true,
+          "channelMHz": 5500,
+          "channelNumber": 100,
+          "txPowerDbm": 14.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 5.0,
+          "reason": null
+        },
+        "6": {
+          "enabled": true,
+          "channelMHz": 6135,
+          "channelNumber": 37,
+          "txPowerDbm": 12.0,
+          "channelWidthMHz": 20,
+          "cableLossDb": 0.0,
+          "antennaGainDbi": 6.0,
+          "reason": null
+        }
+      },
+      "wlcBinding": {
+        "controllerId": "c9800-warehouse",
+        "apMac": "f4:bd:9e:11:22:04",
+        "ipAddress": "10.10.20.104",
+        "syncedAt": null
+      }
+    }
+  ],
+  "simulation": {
+    "model": "log-distance-wall-loss-v1",
+    "gridSizeM": 0.5,
+    "pathLossExponent": 2.8,
+    "referenceDistanceM": 1.0,
+    "noiseFloorDbm": {
+      "2.4": -92.0,
+      "5": -92.0,
+      "6": -94.0
+    },
+    "showLayer": "5",
+    "revision": 1,
+    "calibrationStatus": "uncalibrated"
+  }
+}
